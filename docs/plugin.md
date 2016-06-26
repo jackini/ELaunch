@@ -33,7 +33,7 @@ globalConfig = {
 * event: event.sender.send() , please see [electron docs](http://electron.atom.io/docs/api/ipc-main/#sending-messages)
 * cmdInfo(object): raw object of command
 ```js
-{
+cmdInfo = {
   key: key,
   script: path.resolve(config.dataPath, plugin.script),
   args: args,
@@ -43,7 +43,7 @@ globalConfig = {
 
 ### return
 ```js
-let items =[{
+let items = [{
   name: 'HAHA',
   icon: `${__dirname}/assets/shell.png`,
   value: args.join(' '),// for item.value in execItem, mostly is `args.join(' ')`
@@ -72,4 +72,4 @@ event.sender.send('exec-item-reply')//this would cause the mainWindow to hide
 ```
 
 ## Demos
- You can see demos in [core plugins](../plugins)
+ You can see more demos in [core plugins](../app/plugins)
