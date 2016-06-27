@@ -88,6 +88,7 @@ function init() {
 
 module.exports = {
   setConfig: function (pConfig, gConfig) {
+    console.log(pConfig);
     pluginConfig = pConfig
     globalConfig = gConfig
     init()

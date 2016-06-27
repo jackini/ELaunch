@@ -24,6 +24,9 @@ module.exports = {
           icon_path: ['/usr/share/icons',
             '/home/z/.local/share/icons',
             '/usr/share/pixmaps']
+        },
+        win32:{
+          init_on_start: true
         }
       },
       command: {

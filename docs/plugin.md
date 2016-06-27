@@ -2,9 +2,32 @@
 
 Plugin for ELaunch is a simple npm package, but exports an object with specific methods below
 
-## setConfig()
+## initOnStart() [optional]
+### initOnStart(pluginConfig, globalConfig)
+This method would be called immediately after the ELaunch started, this requires`pluginConfig.initOnStart=true` in config.js:
+```js
+module.exports = {
+  //...
+  plugins: {
+    yourPluginName: {
+      //...
+      config: {
+        //...
+        initOnStart: true,
+        //or
+      },
+      //...
+    }
+  }
+  //...
+}
+
+```
+This is useful is you need to watch something like clipboard. Parameters see [setConfig](#setconfig-optional) below.
+
+## setConfig() [optional]
 ### setConfig(pluginConfig, globalConfig)
-This method would called everytime you triggered this plugin by command.
+This method would be called everytime you triggered this plugin by command.
 * pluginConfig is the config merged command config and plugin config in config file
 * globalConfig is the config file plus some useful tool:
 ```js
@@ -25,6 +48,7 @@ globalConfig = {
   }
 }
 ```
+
 
 ## exec()
 ### exec(args, event, cmdInfo)
